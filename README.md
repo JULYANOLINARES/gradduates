@@ -1,1 +1,1 @@
-# gradduates
+# graduates
