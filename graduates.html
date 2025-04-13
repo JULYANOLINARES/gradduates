@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Congratulations Graduates!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 8vw;
+      margin-top: 20vh;
+      animation: pop 1s ease-in-out;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 5vw;
+      margin-bottom: 2rem;
+      color: #FFD700;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      animation: fall 5s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+    
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎓 Congratulations Graduates!</h1>
+  <h2>Batch 2025 — You Did It!! 🎉</h2>
+  <script>
+    // Generate confetti
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = 2 + Math.random() * 3 + 's';
+      confetti.style.backgroundColor = 
+        ['#ff0', '#f0f', '#0ff', '#0f0', '#f00', '#00f'][Math.floor(Math.random() * 6)];
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
